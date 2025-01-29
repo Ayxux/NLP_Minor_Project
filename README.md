@@ -45,6 +45,6 @@ This project explores various Natural Language Processing (NLP) tasks, ranging f
    ```
 ## **Download the datasets and place them in the data/ folder**
 
-## **Launch Jupyter Notebook/VSCode **
+## **Launch Jupyter Notebook/VSCode**
 
 
