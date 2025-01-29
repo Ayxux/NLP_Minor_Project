@@ -36,8 +36,8 @@ This project explores various Natural Language Processing (NLP) tasks, ranging f
 ## **Setup Instructions**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/nlp-text-modeling.git
-   cd nlp-text-modeling
+   git clone https://github.com/Ayxux/NLP_Minor_Project.git
+   cd NLP_Minor_Project
    ```
 ## **Install dependencies**
    ```bash
