@@ -1,0 +1,9 @@
+.
+├── data/                  # Contains all datasets
+├── notebooks/             # Jupyter notebooks for each task
+├── src/                   # Source code for preprocessing, modeling, and utilities
+├── models/                # Saved models and weights
+├── results/               # Output files (charts, confusion matrices, topic models)
+├── requirements.txt       # Dependencies for the project
+├── README.md              # Project overview and instructions
+└── report/                # Final report in LaTeX
