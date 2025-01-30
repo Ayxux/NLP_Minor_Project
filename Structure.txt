@@ -4,6 +4,8 @@
 ├── src/                   # Source code for preprocessing, modeling, and utilities
 ├── models/                # Saved models and weights
 ├── results/               # Output files (charts, confusion matrices, topic models)
-├── requirements.txt       # Dependencies for the project
+├── STRUCTURE.txt          # Project structure 
 ├── README.md              # Project overview and instructions
+├── WORKFLOW.md            # Detailed workflow covering all critical aspects of the project
+├── REQUIREMENTS.txt       # Dependencies for the project
 └── report/                # Final report in LaTeX
