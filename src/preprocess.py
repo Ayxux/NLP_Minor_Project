@@ -2,35 +2,79 @@
 #Completing Step 1: NLP Pipeline
 #Preprocess python script to maintain modularity and run directly on NLP_Minor_Project/Notebook/fake_news_nlp-pipeline.ipynb
 
-# Import necessary functions from the preprocess.py script
-from src.preprocess import load_data, basic_eda, preprocess_text, vectorize_text
+import pandas as pd
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Step 1: Load the training dataset
-train_df = load_data('/content/drive/MyDrive/data/fake_news/train.csv')
+# Download NLTK resources
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
-# Step 2: Perform in-depth EDA
-# Check for missing values
-print("Missing values in train dataset:\n", train_df.isnull().sum())
+# Initialize lemmatizer
+lemmatizer = WordNetLemmatizer()
 
-# Distribution of labels (real or fake news)
-print("Label distribution:\n", train_df['label'].value_counts())
+def load_data(file_path):
+    """
+    Load the dataset from a CSV file.
+    """
+    return pd.read_csv(file_path)
 
-# Check text length distribution
-train_df['text_length'] = train_df['text'].apply(lambda x: len(str(x)))
-train_df['text_length'].hist(bins=50)
-plt.title('Text Length Distribution')
-plt.xlabel('Text Length')
-plt.ylabel('Frequency')
-plt.show()
+def basic_eda(df):
+    """
+    Perform basic EDA:
+    - Missing value check
+    - Visualize class distribution
+    - Visualize text length distribution
+    """
+    # EDA: Checking for missing values
+    print("Missing values:\n", df.isnull().sum())
+    
+    # EDA: Visualize class distribution (real vs. fake news)
+    sns.countplot(x='label', data=df)
+    plt.title("Class Distribution (Real vs Fake News)")
+    plt.show()
 
-# Visualizing class distribution (real vs. fake news)
-basic_eda(train_df)
+    # EDA: Check text length distribution
+    df['text_length'] = df['text'].apply(lambda x: len(str(x)))
+    df['text_length'].hist(bins=50)
+    plt.title('Text Length Distribution')
+    plt.xlabel('Text Length')
+    plt.ylabel('Frequency')
+    plt.show()
 
-# Step 3: Preprocess the text (Tokenization, Stopword Removal, Lemmatization/Stemming, etc.)
-train_df['cleaned_text'] = train_df['text'].apply(preprocess_text)
+def preprocess_text(text):
+    """
+    Preprocess the text by:
+    - Converting to lowercase
+    - Removing unwanted characters
+    - Lemmatization
+    - Removing stopwords
+    - Tokenizing the text
+    """
+    # Text cleaning: remove unwanted characters, punctuation, etc.
+    text = text.lower()
+    text = ''.join([char for char in text if char.isalnum() or char.isspace()])
+    
+    # Tokenization and Stopword Removal
+    tokens = text.split()
+    stop_words = set(stopwords.words('english'))
+    tokens = [word for word in tokens if word not in stop_words]
+    
+    # Lemmatization (using NLTK's WordNetLemmatizer)
+    tokens = [lemmatizer.lemmatize(word) for word in tokens]
+    
+    return ' '.join(tokens)
 
-# Step 4: Vectorization (TF-IDF)
-X_train = vectorize_text(train_df, column='cleaned_text')
-
+def vectorize_text(df, column='text'):
+    """
+    Convert text data to a TF-IDF representation.
+    """
+    vectorizer = TfidfVectorizer(max_features=10000)
+    return vectorizer.fit_transform(df[column])
 
 
